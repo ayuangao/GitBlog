@@ -5,20 +5,61 @@
 
 <h2>{{ page.title }}</h2>
 
-<pre>
-  <ul>
-    <li>多行字符串：ES6标准新增了一种多行字符串的表示方法，用反引号 ` ... ` 表示</li>
-    <li>
-      <div>
-        模版字符串：ES6新增了一种模板字符串，表示方法和上面的多行字符串一样，但是它会自动替换字符串中的变量：
-      </div>
-      <pre>
-        var name = '小明';
-        var age = 20;
-        var message = `你好, ${name}, 你今年${age}岁了!`;
-      </pre>
-    </li>
-    <li>如果我们要检测某一对象是否拥有某一属性，可以用in操作符：'name' in obj</li>
-  </ul>
+<div class="items">
+  <div>多行字符串：ES6标准新增了一种多行字符串的表示方法，用反引号 ` ... ` 表示</div>
+
+  <div>
+    <div>
+      模版字符串：ES6新增了一种模板字符串，表示方法和上面的多行字符串一样，但是它会自动替换字符串中的变量：
+    </div>
+    <pre>
+      var name = '小明';
+      var age = 20;
+      var message = `你好, ${name}, 你今年${age}岁了!`;
+    </pre>
+  </div>
+
+  <div>如果我们要检测某一对象是否拥有某一属性，可以用in操作符：'name' in obj</div>
+  
+  <div>
+    为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型。
+    for ... in循环由于历史遗留问题，它遍历的实际上是对象的属性名称。
+    一个Array数组实际上也是一个对象，它的每个元素的索引被视为一个属性。
+    <pre>
+      var a = ['A', 'B', 'C'];
+      a.name = 'Hello';
+      for (var x in a) {
+          console.log(x); // '0', '1', '2', 'name'
+      }
+    </pre>
+    for ... in循环将把name包括在内，但Array的length属性却不包括在内。
+    for ... of循环则完全修复了这些问题，它只循环集合本身的元素：
+    然而，更好的方式是直接使用iterable内置的forEach方法，它接收一个函数，每次迭代就自动回调该函数。
+  </div>
+
+  <div>
+    数组.forEach()循环方法对数组的每个元素执行一次提供的函数:
+    array.forEach(function(currentValue, index, arr), thisValue)
+    <pre>
+      a.forEach(function (element, index, array) {
+        // element: 指向当前元素的值
+        // index: 指向当前索引
+        // array: 指向Array对象本身
+        console.log(element + ', index = ' + index);
+      });
+    </pre>
+  </div>
+
+  <div>
+    <p>Map是一组键值对的结构，具有极快的查找速度</p>
+    <p>Set和Map类似，也是一组key的集合，但不存储value。key不能重复</p>
+  </div>
 </div>
 <p>{{ page.date | date_to_string }}</p>
+
+<style>
+  .items{
+    display: flex;
+    flex-direction: column;
+  }
+</style>
