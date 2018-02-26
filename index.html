@@ -11,7 +11,8 @@
         <div>
           {{ post.date | date_to_string }}
         </div>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+     </li>
 　　{% endfor %}
 　</ul>
 </div>
@@ -24,6 +25,9 @@
     align-items: center;
     background-color: #FFF;
     margin:0 auto;
+  }
+  ul{
+    width: 100%;
   }
   .blog{
     display: flex;
