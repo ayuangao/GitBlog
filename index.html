@@ -5,18 +5,27 @@
 <div class="main">
 　<h2>{{ page.title }}</h2>
 　<p>最新文章</p>
-　<ul class="blogs">
+　<ul>
 　　{% for post in site.posts %}
-　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　<li class="blog">
+        <div>
+          {{ post.date | date_to_string }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 　　{% endfor %}
 　</ul>
 </div>
 <style>
   .main{
+    width:50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #FFF;
+  }
+  .blog{
+    display: flex;
+    justify-content: space-between;
   }
 </style>
