@@ -5,16 +5,16 @@
 <div class="main">
 　<h2>{{ page.title }}</h2>
 　<p>最新文章</p>
-　<ul>
+　<div class="blogs">
 　　{% for post in site.posts %}
-　　　<li class="blog">
+　　　<div class="blog">
         <div>
           {{ post.date | date_to_string }}
         </div>
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-     </li>
+     </div>
 　　{% endfor %}
-　</ul>
+　</div>
 </div>
 <style>
   .main{
@@ -26,9 +26,10 @@
     background-color: #FFF;
     margin:0 auto;
   }
-  ul{
+  blogs{
     width: 100%;
     margin:0;
+    padding:0 10px;
   }
   .blog{
     display: flex;
