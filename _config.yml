@@ -1,3 +1,4 @@
 baseurl: /GitBlog
 imgurl: /GitBlog/static/lz.jpg
-defaultCSS: /GitBlog/
+defaultCSS: /GitBlog/highlight/styles/default.css
+highlightpackjs: /GitBlog/highlight/highlight.pack.js
