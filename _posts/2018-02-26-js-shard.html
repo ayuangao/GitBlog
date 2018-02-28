@@ -2,7 +2,9 @@
 　layout: default
 　title: js 碎片
 ---
-
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <h2>{{ page.title }}</h2>
 
 <div class="items">
@@ -12,11 +14,11 @@
     <div>
       模版字符串：ES6新增了一种模板字符串，表示方法和上面的多行字符串一样，但是它会自动替换字符串中的变量：
     </div>
-    <pre>
+    <pre><code>
       var name = '小明';
       var age = 20;
       var message = `你好, ${name}, 你今年${age}岁了!`;
-    </pre>
+    </code></pre>
   </div>
 
   <div>如果我们要检测某一对象是否拥有某一属性，可以用in操作符：'name' in obj</div>
