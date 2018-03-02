@@ -98,6 +98,52 @@
         return x % 2 !== 0;
       });
       r; // [1, 5, 9, 15]
+
+      /* 
+        filter()接收的回调函数，其实可以有多个参数。通常我们仅使用第一个参数，
+         表示Array的某个元素。回调函数还可以接收另外两个参数，表示元素的位置和数组本身：
+      */
+      // 利用过滤可以巧妙地实现数组去重
+      var r,
+          arr = ['1', '2', '1', '2', '3', '3', '5', '6'];
+      r = arr.filter(function(element, index, self){
+        return self.indexof(element) === index;
+      })
+      console.log(r.toString());
+
+      // 筛选出arr中的素数
+      function get_primes(arr) {
+        return arr.filter(function (n) {
+          if (n === 1) {
+              return false;
+          }
+          for(let i = 2; i < n/2 + 1; i++) {
+              if (n % i === 0) {
+                  return false;
+              }
+          }
+          return true;
+        });
+      }
+    </code></pre>
+
+    <pre><code>
+      sort():
+      // array.sort()会把每一项转换为字符串再比较字符的ASCLL进行排序，所有会出现：'10' < '2' , 'B' < 'a'.
+      // 好在sort()也是高阶函数，可以传入一个比较函数，达成我们希望的排序效果:
+      var arr = [10, 20, 1, 2];
+      arr.sort(function (x, y) {
+        if (x < y) {
+            return -1;
+        }
+        if (x > y) {
+            return 1;
+        }
+        return 0;
+      });
+      console.log(arr); // [1, 2, 10, 20]
+      // 箭头函数简化版：
+      arr.sort((x, y) => x-y);
     </code></pre>
   </div>
 
