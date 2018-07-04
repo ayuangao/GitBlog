@@ -1,0 +1,23 @@
+---
+　layout: default
+　title: 前端日常记录
+---
+
+<!-- 代码高亮插件 -->
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div>
+
+    <div>安装cnpm报错,解决办法：</div>
+    <pre><code>
+        先：npm config set registry "http://registry.npmjs.org/"
+        
+        再：npm install -g cnpm
+    </code></pre>
+  
+</div>
+
+<p>{{ page.date | date_to_string }}</p>

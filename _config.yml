@@ -1,3 +1,4 @@
+# jekyll的设置文件
 baseurl: /GitBlog
 imgurl: /GitBlog/static/lz.jpg
 defaultCSS: /GitBlog/highlight/styles/default.css
