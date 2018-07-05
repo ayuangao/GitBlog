@@ -1,0 +1,28 @@
+---
+　layout: default
+　title: 前端页面编写能力
+---
+
+<!-- 代码高亮插件 -->
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div>
+
+    <div>基础页面开发：</div>
+
+    <pre><code>
+        设计稿审查步骤：
+            确定设计稿的开发友好性（是否有还原成本高或无法还原的地方）
+            确定一些特殊的元素是否有合理的边界处理（如文案超出外层容器的边界怎么办）
+            确定页面的框架结构（Layout）
+            确定跨页面可复用的组件（Site Component）
+            确定当前页面可复用的组件（Page Component）
+            ...
+    </code></pre>
+  
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
