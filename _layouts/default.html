@@ -15,10 +15,16 @@
         width: 150px;
         border-radius: 75px;
       }
+      .GitBlog-img-box{
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
 　<body>
-    <img src="{{ site.imgurl }}" alt="icon">
+    <div class="GitBlog-img-box">
+      <img src="{{ site.imgurl }}" alt="icon">
+    </div>
     <!-- 文章内容 -->
 　  {{ content }}
 　</body>
