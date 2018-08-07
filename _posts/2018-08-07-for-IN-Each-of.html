@@ -1,0 +1,113 @@
+---
+　layout: default
+　title: for in,forEach,for of适用场景
+---
+
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div class="items">
+  <div>
+    <h3>for in 适用于遍历对象，可取到索引以及对应的值</h3>
+    <pre><code class="javascript">
+      var obj = {
+        a: 1,
+        b: [],
+        c: function () {}
+      };
+      for (var key in obj) {
+          console.log(key);
+      }
+      // 结果是：
+      // a
+      // b
+      // c
+    </code></pre>
+    <div>
+      for in 对于便利数组的缺点是，
+      同时也也把数组的熟悉，以及原型对象的属性也遍历了
+    </div>
+    <pre><code class="javascript">
+      Object.prototype.objCustom = function() {}; 
+      Array.prototype.arrCustom = function() {};
+      
+      var arr = [3, 5, 7];
+      arr.foo = 'hello';
+      
+      for (var i in arr) {
+          console.log(i);
+      }
+      // 结果是：
+      // 0
+      // 1
+      // 2
+      // foo
+      // arrCustom
+      // objCustom
+    </code></pre>
+  </div>
+  <div>
+    <h3>arr.forEach 适用于需要索引时，遍历数组</h3>
+    <pre><code class="javascript">
+      Object.prototype.objCustom = function() {}; 
+      Array.prototype.arrCustom = function() {};
+      
+      var arr = [3, 5, 7];
+      arr.foo = 'hello';
+      
+      arr.forEach(function (value, i) {
+        console.log(i);
+      });
+      // 结果是：
+      // 0
+      // 1
+      // 2
+    </code></pre>
+    <div>
+      arr.forEach 缺点是只能遍历数组，且无法无法break或者return false中断
+    </div>
+    <pre><code class="javascript">
+      var arr = [3, 5, 7];
+
+      arr.forEach(function (value) {
+        console.log(value);
+        if (value == 5) {
+          return false;
+        }
+      });
+      // 结果是：
+      // 3
+      // 5
+      // 7
+    </code></pre>
+  </div>
+
+  <div>
+    <h3>
+      for..of适用于的迭代：字符串，类数组arguments，NodeList，类型数组，Map，Set，generators的迭代。
+      及对于不需要知道索引的数组遍历，且可以中断，return</h3>
+  </div>
+  <pre><code class="javascript">
+    var arr = [3, 5, 7];
+
+    for (let value of arr) {
+      console.log(value);
+      if (value == 5) {
+        break;
+      }
+    }
+    // 结果是：
+    // 3
+    // 5
+  </code></pre>
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
+<style>
+  .items{
+    display: flex;
+    flex-direction: column;
+  }
+</style>
