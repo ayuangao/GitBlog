@@ -17,6 +17,10 @@
         display: flex;
         justify-content: center;
       }
+      .blog-svg{
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
 　<body>
@@ -25,5 +29,19 @@
     </div>
     <!-- 文章内容 -->
 　  {{ content }}
+    <div class="blog-svg">
+      <svg width="210" height="210">
+        <!-- <rect x="0" y="0" height="300" width="300" style="fill:black"></rect> -->
+        <circle cx="100"  cy="100" r="95" style="stroke: gray;stroke-width:3pt" />
+        <path stroke="gray" stroke-width="3pt" d="
+          M 5,131
+          L 159,19
+          L 100,200
+          L 41,19
+          L 195,131
+          Z
+        "></path>
+      </svg>
+    </div>
 　</body>
 </html>
