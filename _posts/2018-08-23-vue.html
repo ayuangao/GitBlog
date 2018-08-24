@@ -1,0 +1,25 @@
+---
+　layout: default
+　title: vue.js笔记
+---
+
+<!-- 代码高亮插件 -->
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div>
+
+    <h3> v-if 与 v-show</h3>
+    <pre><code>
+      v-if直接控制DOM结构是存在
+      v-show控制CSS的display属性
+      v-if有更高的切换消耗，而v-show有更高的初始渲染消耗
+      因此，如果是频繁切换，就用v-show
+      在条件很难改变，就用v-if
+    </code></pre>
+  
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
