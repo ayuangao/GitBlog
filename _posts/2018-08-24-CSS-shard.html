@@ -1,0 +1,25 @@
+---
+　layout: default
+　title: CSS碎片
+---
+
+<!-- 代码高亮插件 -->
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div>
+
+    <h3> CSS 超出n(n=3)行隐藏显示省略...</h3>
+    <pre><code>
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    </code></pre>
+  
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
