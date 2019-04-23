@@ -1,0 +1,34 @@
+---
+　layout: default
+　title: promise
+---
+
+<!-- 代码高亮插件 -->
+<link rel="stylesheet" href="{{ site.defaultCSS }}">
+<script src="{{ site.highlightpackjs }}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<h2>{{ page.title }}</h2>
+
+<div>
+
+    <h3> promise实例</h3>
+    <pre><code>
+      var promise = new Promise(resolve => {
+          // 异步操作
+          resolve();// 手动resolve后执行then的方法。
+        },
+        false
+      }).then(function() {
+        var promise = new Promise(resolve => {
+              // 异步操作
+              resolve();
+            },
+            false
+        }).then(function() {
+      })
+    </code></pre>
+  
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
+
