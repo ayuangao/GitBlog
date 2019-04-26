@@ -8,10 +8,8 @@
 <script src="{{ site.highlightpackjs }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <h2>{{ page.title }}</h2>
-
 <div>
-
-    <h3> CSS 超出n(n=3)行隐藏显示省略...</h3>
+    <h4> CSS 超出n(n=3)行隐藏显示省略...</h4>
     <pre><code>
       overflow : hidden;
       text-overflow: ellipsis;
@@ -19,7 +17,12 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
     </code></pre>
-  
+
+    <h4> 解决文本中汉字会自动换行，数字和字母不换行问题，添加属性： </h4>
+    <pre><code>
+      word-break:break-all; // 会截断单词
+      word-wrap:break-word; // 保留完整单词进行换行
+    </code></pre>
 </div>
 
 <p>{{ page.date | date_to_string }}</p>
